@@ -1,57 +1,57 @@
-# Laufzeitprüfung: Speed Mod 1.0.3
+# Runtime check: Speed ​​Mod 1.0.3
 
-Geprüft am 3. November 2026 mit PvZ Replanted 1.5.1469_Steam unter Proton und der installierten Modkonfiguration einschließlich Fusion 20.1.0. Debug Mod 1.1.1 steuert den Test über die lokale Datei-API. Es werden ausschließlich temporäre Debug-Level verwendet; keine dauerhaften Profiländerungen werden angefordert.
+Tested on November 3, 2026 with PvZ Replanted 1.5.1469_Steam on Proton and the installed mod configuration including Fusion 20.1.0. Debug Mod 1.1.1 controls the test via the local file API. Only temporary debug levels are used; no permanent profile changes are requested.
 
-## Ursache und Änderung
+## Cause and change
 
-Die native `GameplayActivity.UpdateGame` addiert skalierte Framezeit zu `m_updateTimer` und führt alle fälligen Simulationsticks aus, bevor `Board.PostUpdate` und das nächste Bild folgen. Viele Projektile machen die Simulation teuer. Ein langer Frame erzeugt noch mehr Nachholarbeit. Bei 20× lagen die gemessenen Framezeiten schließlich bei rund 1,75 Sekunden. Native Belege stehen in `speed-scheduler/replanted-0x6000f76.asm` und `speed-scheduler/native-report.md`.
+The native `GameplayActivity.UpdateGame` adds scaled frame time to `m_updateTimer` and executes all due simulation ticks before `Board.PostUpdate` and the next frame. Many projectiles make the simulation expensive. A long frame creates even more catch-up work. At 20×, the measured frame times were ultimately around 1.75 seconds. Native documents are in `speed-scheduler/replanted-0x6000f76.asm` and `speed-scheduler/native-report.md`.
 
-Das neue Framebudget beendet nur weitere Nachholarbeit nach einem vollständigen Tick einschließlich `CheckForGameEnd`. Die native Schleife subtrahiert danach wie bisher ihr aktuelles Zeitintervall. Die Mod erhält dessen Bruchteil und verwirft überschüssige noch nicht simulierte Wandzeit. Die Mod überspringt keine einzelnen Objektupdates, Kampfberechnungen oder Ereignisse innerhalb eines ausgeführten Ticks. Das Budget gilt ausschließlich für den aktiven Spielbesitzer im Schnellvorlauf. 1×, Zeitlupe und Pause behalten die native Steuerung.
+The new frame budget only ends further catch-up work after a full tick including `CheckForGameEnd`. The native loop then subtracts its current time interval as before. The mod receives its fraction and discards any excess wall time that has not yet been simulated. The mod does not skip individual item updates, combat calculations, or events within a tick performed. The budget applies exclusively to the active game owner in Fast Forward. 1×, slow motion and pause retain native controls.
 
-Zusätzlich entfallen wiederholte native Abfragen des visuellen Takts. Der Projektilcontroller verwendet ab 10× direkt die native Basisaktualisierung ohne den anschließenden Drehungsblock. Position, Sortierung und Schatten verbleiben im nativen Code. Belege stehen in `native-animation/replanted-0x6000bfe.asm` und `speed-projectile-performance/`.
+In addition, repeated native queries of the visual clock are no longer necessary. Starting at 10×, the projectile controller directly uses the native base update without the subsequent rotation block. Position, sorting and shadows remain in the native code. Documents are in `native-animation/replanted-0x6000bfe.asm` and `speed-projectile-performance/`.
 
-## Messung
+## measurement
 
-30 native Repeater in sechs Spalten, fünf native Normal-Zombies als vereiste Ziele mit je 10000000 Körperleben. Etwa 40–56 Projektile gleichzeitig. Pro Geschwindigkeitsstufe zwei Messungen über mindestens sechs Sekunden, zuerst aufsteigend und danach absteigend. FPS werden aus der Differenz nativer Renderframezähler und gemessener Wandzeit berechnet. Beide Versionen behalten 30 Pflanzen und fünf Zombies während des Vergleichs.
+30 native repeaters in six columns, five native normal zombies as iced targets with 10000000 body health each. About 40-56 projectiles at a time. Two measurements per speed level over at least six seconds, first ascending and then descending. FPS are calculated from the difference between native render frame counts and measured wall time. Both versions retain 30 plants and five zombies during the comparison.
 
-| Gewählte Stufe | Speed Mod 1.0.2 | Speed Mod 1.0.3 |
+| Selected level | Speed ​​Mod 1.0.2 | Speed ​​Mod 1.0.3 |
 | --- | ---: | ---: |
 | 1× | 60,26 FPS | 59,91 FPS |
 | 5× | 2,35 FPS | 46,31 FPS |
 | 10× | 1,12 FPS | 43,52 FPS |
 | 20× | 0,57 FPS | 42,62 FPS |
 
-Das alleinige Einsparen der nativen Taktabfragen und der Projektilrotation erreichte bei 20× etwa 0,65 FPS. Erst das begrenzte Nachholen beseitigt die langen Renderblockaden.
+Simply saving the native clock polls and projectile rotation achieved around 0.65 FPS at 20x. Only the limited catch-up eliminates the long rendering blocks.
 
-Die Glättung hat einen ausdrücklichen Preis: Unter dieser CPU-Last erreicht die Simulation bei gewählten 20× etwa 279 Ticks/s statt zuvor 455 Ticks/s. Das native Intervall beträgt 1/120 Sekunde. Das entspricht etwa 2,32× statt 3,79× tatsächlich erreichtem Tempo. Die gewählte Stufe bleibt erhalten. Ohne Überlast darf die Simulation weiterhin sämtliche fälligen Ticks ausführen. Es entsteht keine spätere Nachhollawine.
+The smoothing has an explicit price: under this CPU load, the simulation reaches around 279 ticks/s instead of the previous 455 ticks/s at selected 20×. The native interval is 1/120 second. This corresponds to around 2.32× instead of 3.79× actual speed achieved. The selected level is retained. Without overload, the simulation is allowed to continue executing all ticks due. There will be no subsequent avalanche of catch-up.
 
-Rohdaten: `performance/before.json`, `performance/cached.json`, `performance/budget.json`. Die historische Eigenschaft `simulation_rate` dieser drei Dateien verwendet nominell 100 Ticks/s; für tatsächliches Tempo mit 100/120 multiplizieren. `performance/summary.json` enthält die expliziten Ticks/s, Versionen und installierten Prüfsummen. Der wiederholbare Test `tools/benchmark_projectiles.py` verwendet bereits das vom Spiel gelieferte `fps.tickSeconds`.
+Raw data: `performance/before.json`, `performance/cached.json`, `performance/budget.json`. The historical property `simulation_rate` of these three files nominally uses 100 ticks/s; for actual tempo, multiply by 100/120. `performance/summary.json` contains the explicit ticks/s, versions and installed checksums. The `tools/benchmark_projectiles.py` repeatable test already uses the game-supplied `fps.tickSeconds`.
 
-## Reproduktion und Grenzen
+## Reproduction and limits
 
 ```sh
 rtk proxy python3 pvzreplanted/speed-mod/tools/benchmark_projectiles.py /tmp/speed-performance.json
 rtk proxy pvzreplanted/.tools/dotnet/dotnet run --project pvzreplanted/speed-mod/tests/VisualClockTests.csproj -c Release
 ```
 
-Der Benchmark benötigt das gestartete Spiel am Startbildschirm oder im Hauptmenü. Er betätigt den nativen Startknopf über `startup.continue`, erstellt seine Debug-Sitzung und verlässt sie nach dem Test. Vollständige Ergebnisse bleiben beim angegebenen Ausgabepfad erhalten.
+The benchmark requires the game to be started on the start screen or in the main menu. He presses the native start button via `startup.continue`, creates his debug session and exits it after the test. Complete results are retained at the specified output path.
 
-Die Regressionstests prüfen Taktcache, Animation bei 10×/20×, Track-Neustart, Rückkehr unter die Reduktionsschwelle, Boardende, Menü, Deadline, vollständige Ticks, Bruchteilerhalt, 1×, Pause und fremde Boards. Release-Builds von SpeedMod und DebugMod sind erfolgreich.
+The regression tests check clock cache, animation at 10×/20×, track restart, return below reduction threshold, end of board, menu, deadline, full ticks, fractional retention, 1×, pause and foreign boards. Release builds of SpeedMod and DebugMod are successful.
 
-Dies ist ein konkreter lokaler Lasttest, keine allgemeine 60-FPS-Garantie. Ein einzelner teurer nativer Tick kann das 12-ms-Budget überschreiten. Unterschiedliche Pflanzen, Mods und Hardware verändern erreichbare Bildrate und Simulationstempo. Der native Aufrufpfad wurde für die genannte Spielversion geprüft.
+This is a specific local load test, not a general 60 FPS guarantee. A single expensive native tick can exceed the 12ms budget. Different plants, mods and hardware change the achievable frame rate and simulation speed. The native calling path has been checked for the mentioned game version.
 
-## Funktionale Laufzeitabnahme
+## Functional runtime decrease
 
-`performance/runtime.json` enthält die Anfragen und Antworten der abschließenden Prüfung mit den final installierten DLLs. Alle folgenden Prüfungen bestehen:
+`performance/runtime.json` contains the requests and responses from the final check with the final installed DLLs. Pass all of the following tests:
 
-- `startup.continue` erreicht das Hauptmenü selbstständig. Wiederholung im Hauptmenü ist idempotent; während eines Levels wird `INVALID_STATE` gemeldet.
-- Ohne Kampflast erreichen die Stufen 1×, 1,5×, 2×, 2,5×, 5×, 10× und 20× ihr gewähltes Tempo innerhalb der Messtoleranz. Bei 20× wurden 20,14× erreicht.
-- Native Pause stoppt den Simulationszähler. Wiederholtes Pausieren/Fortsetzen bleibt idempotent. Geschwindigkeitswahl während Pause hebt Pause nicht auf.
-- Ungültige Vereisungsdauer verändert die vorher geprüften Körperleben nicht. Fehlende Werte und veraltete Boardkennungen werden abgelehnt.
-- Aufeinanderfolgende Projektilsnapshots zeigen Positionsfortschritt derselben Projektil-ID. Bei 20× sinken die Leben des Testzombies weiterhin; die Vereisung bleibt bestehen.
-- Rückkehr von 20× auf 1× stellt ohne Nachhollawine mehr als 45 FPS wieder her.
-- Native Entfernung der Vereisung setzt deren Zähler zurück. Levelwechsel schützt alte IDs. Verlassen eines pausierten Debug-Boards gibt die API-eigene Pause frei.
+- `startup.continue` reaches the main menu independently. Repetition in the main menu is idempotent; `INVALID_STATE` is reported during a level.
+- Without combat load, levels 1×, 1.5×, 2×, 2.5×, 5×, 10× and 20× reach their selected speed within the measurement tolerance. At 20×, 20.14× were achieved.
+- Native Pause stops the simulation counter. Repeated pausing/resume remains idempotent. Selecting speed during pause does not cancel pause.
+- Invalid icing duration does not change the previously checked body lives. Missing values ​​and outdated board IDs are rejected.
+- Consecutive projectile snapshots show position progression of the same projectile ID. At 20x, the test zombie's health continues to decrease; the icing remains.
+- Returning from 20× to 1× restores more than 45 FPS without a catch-up avalanche.
+- Native removal of icing resets its counter. Level changing protects old IDs. Exiting a paused debug board releases the API's own pause.
 
-Die vorher wirkungslose API-Pause ruft jetzt die native Zeitsteuerung auf und besitzt dabei genau einen eigenen Pauseeintrag. `DebugUi.Dispose` berücksichtigt bereits von Unity zerstörte UI-Objekte. Während der abschließenden Laufzeitprüfung enthält das Spielprotokoll keine Fehler oder Ausnahmen.
+The previously ineffective API pause now calls the native time control and has exactly its own pause entry. `DebugUi.Dispose` takes UI objects already destroyed by Unity into account. During the final runtime check, the game log contains no errors or exceptions.
 
-Installiert sind SpeedMod 1.0.3 und DebugMod 1.1.1. Builddateien und installierte DLLs haben jeweils identische SHA-256-Prüfsummen. Sicherungen und Installationsmanifeste liegen unter `debug-mod/backups/install-20261103-161638-169072` sowie für die finale API unter `debug-mod/backups/install-20261103-162319-208721`.
+SpeedMod 1.0.3 and DebugMod 1.1.1 are installed. Build files and installed DLLs each have identical SHA-256 checksums. Backups and installation manifests are under `debug-mod/backups/install-20261103-161638-169072` and for the final API under `debug-mod/backups/install-20261103-162319-208721`.

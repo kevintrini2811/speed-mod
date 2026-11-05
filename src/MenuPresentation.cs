@@ -21,7 +21,7 @@ internal static class MenuPresentation {
             // The native menu owns icon placement and its border. The sprite
             // contains the slowdown button and roof; no UI is added behind the text.
             ModMenuService.CreateEntry(mod).AddIcon(icon)
-                .AddDescription("Spieltempo bis 20×, Zeitlupe 0,2×. Ab 10×: Animationen 2×, Projektile ohne Animation.").Register();
+                .AddDescription("Game speed up to 20× and 0.2× slow motion. At 10× and above: 2× visual animation speed and no projectile animation.").Register();
         } catch {
             if (icon != null) { Object.Destroy(icon); icon = null; }
             Object.Destroy(texture); throw;

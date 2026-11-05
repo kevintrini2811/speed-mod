@@ -1,57 +1,66 @@
-# Speed Mod 1.0.3
+# Speed Mod 1.0.4
 
-Eigenständige MelonLoader-Mod für PvZ Replanted. Benötigt BloomEngine, aber keine Fusion-Mod.
+## Dependencies
 
-Der native Schnellvorlauf erhält zusätzlich 5×, 10× und 20×. Rechtsklick auf den Schnellvorlauf wählt die vorherige Stufe. Der links daneben stehende Slowdown-Knopf schaltet 0,2× ein und aus. Die zuvor gewählte Schnellvorlaufstufe bleibt erhalten, auch bei Stufenwechseln während der Zeitlupe. Native Pause, Audiotempo und Menüs behalten ihre Zuständigkeit.
+- Game/runtime: PvZ Replanted (Windows/IL2CPP), MelonLoader 0.7.3, and .NET 6.
+- Required mods: `BloomEngine.dll`.
+- Optional integrations: `DebugMod`.
+- Building: .NET SDK with `net6.0` support and the game/MelonLoader reference assemblies declared in `SpeedMod.csproj`.
 
-Ab 10× laufen sichtbare Animationen mit dem relativen Tempo von 2×. Native Animationstracks, Ereignisse, Treffer, Bewegung und Simulation laufen weiterhin mit dem ausgewählten Spieltempo. Projektilposen und visuelle Drehungen bleiben ab 10× stehen; Flug und Kollisionen laufen weiter. Aufprallpartikel und reine Aufprall-Reanimationen werden ab 10× ebenfalls unterdrückt. Treffer, Schaden, Statuswirkungen und Aufprallgeräusche bleiben erhalten. Unter 10× wird die native Darstellung wieder verwendet. Die zusätzlichen visuellen Zustände sind flüchtig und verändern keine Spielstände.
+Version 1.0.4 checks whether the native Unity component is still alive before additional animation accesses. After plant removal, a native animation callback can still be called with an existing IL2CPP wrapper whose Unity object is already destroyed.
 
-Die Fusion-Mod benötigt SpeedMod. Ihre Geschwindigkeitssteuerung wurde entfernt. Fusion verwendet den öffentlichen Positionsanker für die goldene Kaffeebohne und einen ans jeweilige Grafikobjekt gebundenen `VisualClock` für importierte Pflanzen und Zombies. Importierte Projektile lassen Posenberechnung und Drehungen ab 10× aus. Fusion besitzt weiterhin ihre Grafikmodelle; SpeedMod besitzt die Geschwindigkeitsregeln.
+Standalone MelonLoader mod for PvZ Replanted. Requires BloomEngine, but no Fusion mod.
 
-Das Modmenü verwendet wie Plant Library ein eingebettetes, undurchsichtiges 512×512-Icon. Der native 1,5×-Indikator wird wie beim Slowdown-Knopf gespiegelt, auf seine native Buttonplatte gelegt und mit `Area5_Roof` kombiniert. BloomEngine setzt Rahmen und Position. Herkunft und Prüfsummen stehen in `assets/sources.json`.
+The native fast forward also gets 5×, 10× and 20×. Right click on the fast forward selects the previous stage. The slowdown button to the left switches on and off 0.2×. The previously selected fast forward level is retained, even when changing levels during slow motion. Native pause, audio tempo and menus retain their responsibility.
 
-## Bauen und installieren
+From 10x onwards, visible animations run at the relative speed of 2x. Native animation tracks, events, hits, movement and simulation continue to run at the selected game pace. Projectile poses and visual rotations freeze at 10×; Flight and collisions continue. Impact particles and pure impact reanimations are also suppressed starting at 10x. Hits, damage, status effects and impact sounds are retained. Below 10× the native representation is used again. The additional visual states are fleeting and do not change game states.
 
-Aus `/home/kevin/modding`:
+The Fusion Mod requires SpeedMod. Its built-in speed controls have been removed. Fusion uses the public position anchor for the golden coffee bean and a `VisualClock` bound to the respective graphic object for imported plants and zombies. Imported projectiles omit pose calculation and rotations above 10x. Fusion still owns their graphics models; SpeedMod owns the speed rules.
+
+Like Plant Library, the mod menu uses an embedded, opaque 512×512 icon. The native 1.5× indicator is mirrored like the slowdown button, placed on its native button plate and combined with `Area5_Roof`. BloomEngine sets frame and position. Origin and checksums are in `assets/sources.json`.
+
+## Building and installing
+
+From `/home/kevin/modding`:
 
 ```sh
 rtk proxy pvzreplanted/.tools/dotnet/dotnet build pvzreplanted/fusion-mod/FusionMod.csproj -c Release
 rtk proxy pvzreplanted/.tools/fusion-workflow/bin/python pvzreplanted/speed-mod/tools/install.py
 ```
 
-Für ein Update ausschließlich dieser Mod genügt ein Release-Build von `speed-mod/SpeedMod.csproj` und anschließend `python3 pvzreplanted/debug-mod/tools/install.py --only SpeedMod`. Auch dieser Installer sichert DLL und Prüfsummen vor dem atomaren Austausch.
+To update only this mod, a release build of `speed-mod/SpeedMod.csproj` and then `python3 pvzreplanted/debug-mod/tools/install.py --only SpeedMod` is sufficient. This installer also secures DLL and checksums before atomic exchange.
 
-Der Fusion-Build baut SpeedMod mit. Der Installer sichert beide vorhandenen DLLs, prüft zwischenzeitliche Dateiänderungen und ersetzt `Mods/SpeedMod.dll` sowie `Mods/FusionMod.dll`. Bei einem Installationsfehler stellt er den vorherigen Zustand wieder her. `backups/<Zeitstempel>/installation.json` enthält die ursprünglichen und installierten Prüfsummen.
+The Fusion build includes SpeedMod. The installer saves both existing DLLs, checks interim file changes and replaces `Mods/SpeedMod.dll` and `Mods/FusionMod.dll`. In the event of an installation error, it restores the previous state. `backups/<Zeitstempel>/installation.json` contains the original and installed checksums.
 
-Für einen Rückbau beide DLLs gemeinsam aus derselben Sicherung wiederherstellen. Falls vorher keine SpeedMod installiert war, `Mods/SpeedMod.dll` entfernen und die gesicherte FusionMod.dll wiederherstellen. Spiel während Installation und Rückbau geschlossen halten.
+To restore both DLLs together from the same backup. If no SpeedMod was previously installed, remove `Mods/SpeedMod.dll` and restore the backed up FusionMod.dll. Keep the game closed during installation and dismantling.
 
-## Prüfung und Abnahme
+## Testing and acceptance
 
-Die Prüfung umfasst Release-Kompilierung, Regressionstests für den visuellen Takt, native Aufrufpfade und einen Laufzeittest über die Debug-API. Ergebnisse und Grenzen stehen in `references/performance-validation.md`.
+Testing includes release compilation, visual clock regression testing, native call paths, and a runtime test via the Debug API. Results and limits are in `references/performance-validation.md`.
 
-`references/native-animation` belegt den Animationstakt und die native Projektilrotation. `references/native-spine` belegt `SkeletonAnimation.Update(float)` und die getrennte `OnlyEventTimelines`-Phase. Diese Phase bleibt unverändert; nur die anschließende sichtbare Pose verwendet einen separaten AnimationState ohne Spielereignis-Abonnenten. `references/native-impact` belegt die getrennten Aufprall-, Schadens- und Effektaufrufe. Nur Aufprallpartikel innerhalb von Projektilaufrufen werden unterdrückt. Butter- und Eiszustände sowie Todespartikel bleiben erhalten. Die native Feuer-Aufprallanimation muss zunächst ein gültiges Objekt liefern, weil der Aufrufer es unmittelbar konfiguriert; das Objekt wird nach dem Aufruf vor dem nächsten Zeichnen freigegeben.
+`references/native-animation` occupies the animation clock and the native projectile rotation. `references/native-spine` occupies `SkeletonAnimation.Update(float)` and the separate `OnlyEventTimelines` phase. This phase remains unchanged; only the subsequent visible pose uses a separate AnimationState without game event subscribers. `references/native-impact` occupies the separate impact, damage and effect calls. Only impact particles within projectile calls are suppressed. Butter and ice states as well as death particles are preserved. The native fire impact animation must first provide a valid object because the caller configures it immediately; The object is released after the call before the next drawing.
 
-`references/native-ground` belegt die native, auf logischen Trackzeiten beruhende Bodenbewegung. Wiederverwendete Controller verwerfen den alten visuellen Zustand.
+`references/native-ground` demonstrates native ground motion based on logical track times. Reused controllers discard the old visual state.
 
-Manuell prüfen:
+Check manually:
 
-- Schnellvorlauf 1×, 1,5×, 2×, 2,5×, 5×, 10× und 20×; Rechtsklick rückwärts.
-- Zeitlupe 0,2×, Stufenwahl während Zeitlupe, Rückkehr zur gewählten Stufe.
-- Pause, Fortsetzen, Levelende, neues Level, Speichern und Laden bei hohem Tempo.
-- Ab 10×: native und importierte Pflanzen/Zombies mit 2×-Animation; unveränderte Angriffs-, Schadens- und Bewegungstakte.
-- Aufpralleffekte bei 5× sichtbar, bei 10×/20× unterdrückt; Schaden, Flächenschaden, Butter, Kälte und Geräusche bleiben korrekt.
-- Native sowie Fusion-Projektile: keine Posenanimation oder Drehung ab 10×, aber korrekter Flug, Schatten und Treffer. Unter 10× wieder normale Animation.
-- SpeedMod ohne Fusion sowie zusammen mit Fusion; Modmenü-Icon, Slowdown-Knopf und Kaffeebohnenposition.
+- Fast forward 1×, 1.5×, 2×, 2.5×, 5×, 10× and 20×; Right click backwards.
+- Slow motion 0.2×, level selection during slow motion, return to selected level.
+- Pause, resume, level end, new level, save and load at high speed.
+- From 10×: native and imported plants/zombies with 2× animation; unchanged attack, damage and movement cycles.
+- Impact effects visible at 5×, suppressed at 10×/20×; Damage, area damage, butter, cold and sounds remain correct.
+- Native and fusion projectiles: no pose animation or rotation from 10x, but correct flight, shadows and hits. Below 10× normal animation again.
+- SpeedMod without Fusion and together with Fusion; Mod menu icon, slowdown button and coffee bean position.
 
-## Projektiloptimierung in 1.0.3
+## Projectile optimization in 1.0.3
 
-Die native Nachholschleife leert sonst sämtliche angesammelte Spielzeit vor dem nächsten Renderframe. Hohe Geschwindigkeit und viele Projektile verlängern den Frame, der nächste Frame sammelt noch mehr Arbeit an. In der getesteten Modkonfiguration blockierte ein Frame bei 20× etwa 1,75 Sekunden.
+Otherwise, the native catch-up loop will empty all accumulated playing time before the next render frame. High speed and lots of projectiles extend the frame, the next frame accumulates even more work. In the tested mod configuration, a frame at 20× blocked for about 1.75 seconds.
 
-Bei Schnellvorlauf darf die Simulation deshalb rund 12 ms pro Renderframe arbeiten. Erst nach einem vollständigen nativen Tick einschließlich der Prüfung auf Levelende wird überschüssige Nachholzeit verworfen. Der Rest eines angebrochenen Zeitintervalls bleibt erhalten. Kein einzelner Kampf-, Ereignis- oder Objekttick wird übersprungen. 1×, Zeitlupe, Pause und andere Boards behalten ihre native Steuerung. Unter CPU-Überlast ist die tatsächlich erreichte Spielgeschwindigkeit niedriger als die gewählte Stufe. Die Stufe bleibt erhalten und wird bei ausreichend Leistung wieder erreicht; es gibt keine später nachzuholende Zeitlawine.
+When fast forwarding, the simulation can therefore work for around 12 ms per render frame. Only after a complete native tick including the end-of-level check is any excess catch-up time discarded. The remainder of a started time interval remains intact. No single combat, event or object tick is skipped. 1×, slow motion, pause and other boards retain their native controls. Under CPU overload, the actual game speed achieved is lower than the selected level. The level is retained and is reached again if there is enough power; there is no avalanche of time to be made up later.
 
-Die häufigen Animations- und Trefferaufrufe verwenden einen gemeinsamen Snapshot von Geschwindigkeitsstufe und visuellem Takt. Der Snapshot wird pro Renderframe sowie unmittelbar bei nativen Geschwindigkeits- und Boardwechseln aktualisiert. Wiederholte native Zugriffe auf Spielmodus, Szene und Zeitsteuerung entfallen in diesen Hotpaths.
+The frequent animation and hit calls use a common snapshot of speed level and visual beat. The snapshot is updated per render frame and immediately upon native speed and board changes. Repeated native access to game mode, scene and time control is no longer required in these hotpaths.
 
-Ab 10× ruft der Projektilcontroller direkt sein natives `ReloadedController.Update` auf. Dessen native Positions-, Sortier- und Schattenaktualisierung bleibt erhalten. Der anschließend ausgeführte Drehungsblock entfällt vollständig; vorher berechnete die Mod die Drehung und setzte sie über weitere Unity-Aufrufe zurück. Die Methode wird über IL2CPP-Metadaten aufgelöst, ohne fest codierte Binäradressen. Ist sie nicht verfügbar, bleibt das vollständige native Update aktiv. Simulation, Ereignisse und Kollisionen bleiben unverändert.
+From 10× the projectile controller directly calls its native `ReloadedController.Update`. Its native position, sort and shadow updates are retained. The subsequent rotation block is completely eliminated; previously the mod calculated the rotation and reset it via further Unity calls. The method is resolved via IL2CPP metadata, without hard-coded binary addresses. If it is not available, the full native update remains active. Simulation, events and collisions remain unchanged.
 
 Regressionstest:
 
