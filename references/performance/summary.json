@@ -1,0 +1,55 @@
+{
+  "game": "PvZ Replanted 1.5.1469_Steam",
+  "before_speedmod": "1.0.2",
+  "after_speedmod": "1.0.3",
+  "debugmod": "1.1.1",
+  "tick_seconds": 0.008333333333333333,
+  "scenario": {
+    "plants": 30,
+    "plant_type": "Repeater",
+    "zombies": 5,
+    "zombie_type": "Normal",
+    "health": 10000000,
+    "freeze_ticks": 1000000
+  },
+  "measurements": [
+    {
+      "scale": 1,
+      "before_fps": 60.260328512137434,
+      "after_fps": 59.912027988012184,
+      "before_ticks_per_second": 120.4379587616502,
+      "after_ticks_per_second": 119.6592336346553
+    },
+    {
+      "scale": 5,
+      "before_fps": 2.3512310577512485,
+      "after_fps": 46.30838280953006,
+      "before_ticks_per_second": 445.05240168392197,
+      "after_ticks_per_second": 290.9764388639584
+    },
+    {
+      "scale": 10,
+      "before_fps": 1.122825974303332,
+      "after_fps": 43.51734875149597,
+      "before_ticks_per_second": 449.1303897213328,
+      "after_ticks_per_second": 280.060438921436
+    },
+    {
+      "scale": 20,
+      "before_fps": 0.5691067930786853,
+      "after_fps": 42.619541142156976,
+      "before_ticks_per_second": 455.2854344629483,
+      "after_ticks_per_second": 278.647464889218
+    }
+  ],
+  "notes": [
+    "Two six-second samples per speed in ascending and descending order.",
+    "Legacy simulation_rate in raw before/cached/budget files uses 100 ticks per second. Convert to actual game speed using tick_seconds=1/120.",
+    "The simulation budget drops excess wall-clock catch-up under CPU overload. Each executed native tick remains complete."
+  ],
+  "SpeedMod_sha256": "34d17ba7ecee8c5a3f31a9cd8ea08a8cc96dbd3453e49f87ff7c81e6c969f4cb",
+  "DebugMod_sha256": "f28cd1b354fb281fd75cf3819e3418b99ec624cf6968d4c40454e01d0ef565a1",
+  "runtime_checks": "passed; see runtime.json",
+  "installation_backup": "/home/kevin/modding/pvzreplanted/debug-mod/backups/install-20261103-161638-169072",
+  "final_api_backup": "/home/kevin/modding/pvzreplanted/debug-mod/backups/install-20261103-162319-208721"
+}

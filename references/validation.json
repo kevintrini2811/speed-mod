@@ -1,0 +1,25 @@
+{
+  "game_started": false,
+  "runtime_tests": false,
+  "release_build": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "fusion_static_check": {
+    "active_recipes": 353,
+    "pending_recipes": 316,
+    "errors": 0
+  },
+  "assemblies": {
+    "SpeedMod": {
+      "built_sha256": "b00953ae574f75fe619b502b491724be713f002d58a90680bf4fa0579e0fc429",
+      "installed_sha256": "b00953ae574f75fe619b502b491724be713f002d58a90680bf4fa0579e0fc429"
+    },
+    "FusionMod": {
+      "built_sha256": "1f9a368b07b5c209ef88fd86c8cf89ab350d51cdd28102dd9cb749dc67a1763a",
+      "installed_sha256": "1f9a368b07b5c209ef88fd86c8cf89ab350d51cdd28102dd9cb749dc67a1763a"
+    }
+  },
+  "speed_mod_version": "1.0.1",
+  "impact_effects_threshold": 10
+}

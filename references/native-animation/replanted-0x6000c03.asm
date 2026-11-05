@@ -1,0 +1,11 @@
+007b3850: xor edx, edx
+007b3852: jmp 0x1807cb580
+007b3857: int3 
+007b3858: int3 
+007b3859: int3 
+007b385a: int3 
+007b385b: int3 
+007b385c: int3 
+007b385d: int3 
+007b385e: int3 
+007b385f: int3 

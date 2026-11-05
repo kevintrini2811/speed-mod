@@ -1,0 +1,11 @@
+006102b0: xor edx, edx
+006102b2: jmp 0x1838148f0
+006102b7: int3 
+006102b8: int3 
+006102b9: int3 
+006102ba: int3 
+006102bb: int3 
+006102bc: int3 
+006102bd: int3 
+006102be: int3 
+006102bf: int3 

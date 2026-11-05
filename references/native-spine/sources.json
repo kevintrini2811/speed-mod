@@ -1,0 +1,11 @@
+{
+  "game_assembly_sha256": "e7333eaf87996fa44b4a3526986272319b7d01f7acdbcff52451652f61ceb696",
+  "methods": {
+    "Update-float": "0x2f6d740",
+    "UpdateAnimationStatus": "0x2f6d650",
+    "StartApplyAnimation": "0x2f6d620",
+    "FinishApplyAnimation": "0x2f6d1d0",
+    "ApplyAnimation": "0x2f6d0f0",
+    "AfterAnimationApplied": "0x2f6d020"
+  }
+}

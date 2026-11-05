@@ -1,0 +1,820 @@
+[
+  {
+    "simulation_rate": 1.206326436670226,
+    "index": 0,
+    "scale": 1,
+    "elapsed": 6.084588530000474,
+    "fps": 60.316321833511296,
+    "instant_median": 60.06006,
+    "projectiles": 49,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 60.06006,
+        "frame": 1306,
+        "simulationTick": 404,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1315,
+        "simulationTick": 422,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1327,
+        "simulationTick": 446,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1339,
+        "simulationTick": 470,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1348,
+        "simulationTick": 488,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1357,
+        "simulationTick": 506,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1366,
+        "simulationTick": 524,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1378,
+        "simulationTick": 548,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1390,
+        "simulationTick": 572,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1399,
+        "simulationTick": 590,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1408,
+        "simulationTick": 608,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1417,
+        "simulationTick": 626,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1428,
+        "simulationTick": 648,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1437,
+        "simulationTick": 666,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1446,
+        "simulationTick": 684,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1458,
+        "simulationTick": 708,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1470,
+        "simulationTick": 732,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1482,
+        "simulationTick": 756,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1494,
+        "simulationTick": 780,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1506,
+        "simulationTick": 804,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1518,
+        "simulationTick": 828,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1530,
+        "simulationTick": 852,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1539,
+        "simulationTick": 870,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1548,
+        "simulationTick": 888,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1557,
+        "simulationTick": 906,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1568,
+        "simulationTick": 928,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1577,
+        "simulationTick": 946,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1586,
+        "simulationTick": 964,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1598,
+        "simulationTick": 988,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1610,
+        "simulationTick": 1012,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1622,
+        "simulationTick": 1036,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1634,
+        "simulationTick": 1060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1646,
+        "simulationTick": 1084,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1658,
+        "simulationTick": 1108,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.4421478255107845,
+    "index": 4,
+    "scale": 5,
+    "elapsed": 6.4698432219993265,
+    "fps": 2.4730120114186693,
+    "instant_median": 2.2750554,
+    "projectiles": 41,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 5.9804854,
+        "frame": 1698,
+        "simulationTick": 1686,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 5.6897774,
+        "frame": 1699,
+        "simulationTick": 1791,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 4.3683896,
+        "frame": 1700,
+        "simulationTick": 1929,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 4.076089,
+        "frame": 1701,
+        "simulationTick": 2076,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 3.2474377,
+        "frame": 1702,
+        "simulationTick": 2261,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 3.004715,
+        "frame": 1703,
+        "simulationTick": 2460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.4473436,
+        "frame": 1704,
+        "simulationTick": 2660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.226225,
+        "frame": 1705,
+        "simulationTick": 2860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.198457,
+        "frame": 1706,
+        "simulationTick": 3060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2715952,
+        "frame": 1707,
+        "simulationTick": 3260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2265162,
+        "frame": 1708,
+        "simulationTick": 3460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2519805,
+        "frame": 1709,
+        "simulationTick": 3660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2750554,
+        "frame": 1710,
+        "simulationTick": 3860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.1673276,
+        "frame": 1711,
+        "simulationTick": 4060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.236123,
+        "frame": 1712,
+        "simulationTick": 4260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.504346945567697,
+    "index": 5,
+    "scale": 10,
+    "elapsed": 7.104248493000341,
+    "fps": 1.1260867363919242,
+    "instant_median": 1.1188987,
+    "projectiles": 44,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 1.0964414,
+        "frame": 1720,
+        "simulationTick": 6460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1458576,
+        "frame": 1721,
+        "simulationTick": 6860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.113254,
+        "frame": 1722,
+        "simulationTick": 7260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1584995,
+        "frame": 1723,
+        "simulationTick": 7660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1188987,
+        "frame": 1724,
+        "simulationTick": 8060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1319145,
+        "frame": 1725,
+        "simulationTick": 8460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.10755,
+        "frame": 1726,
+        "simulationTick": 8860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.552537700734905,
+    "index": 6,
+    "scale": 20,
+    "elapsed": 8.786308347000158,
+    "fps": 0.5690672125918631,
+    "instant_median": 0.57414955,
+    "projectiles": 49,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 1.1010484,
+        "frame": 1733,
+        "simulationTick": 12460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.5659603,
+        "frame": 1734,
+        "simulationTick": 13260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.573212,
+        "frame": 1735,
+        "simulationTick": 14060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.5750871,
+        "frame": 1736,
+        "simulationTick": 14860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.5531709885240605,
+    "index": 6,
+    "scale": 20,
+    "elapsed": 8.785086284002318,
+    "fps": 0.5691463735655076,
+    "instant_median": 0.5669565649999999,
+    "projectiles": 45,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 0.5609082,
+        "frame": 1743,
+        "simulationTick": 20460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.5648506,
+        "frame": 1744,
+        "simulationTick": 21260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.56906253,
+        "frame": 1745,
+        "simulationTick": 22060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 0.5743325,
+        "frame": 1746,
+        "simulationTick": 22860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.478260848858959,
+    "index": 5,
+    "scale": 10,
+    "elapsed": 7.1456311010006175,
+    "fps": 1.1195652122147397,
+    "instant_median": 1.1208344,
+    "projectiles": 49,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 1.1143782,
+        "frame": 1754,
+        "simulationTick": 28060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1346467,
+        "frame": 1755,
+        "simulationTick": 28460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1178015,
+        "frame": 1756,
+        "simulationTick": 28860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.0868045,
+        "frame": 1757,
+        "simulationTick": 29260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1235747,
+        "frame": 1758,
+        "simulationTick": 29660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1208344,
+        "frame": 1759,
+        "simulationTick": 30060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 1.1345562,
+        "frame": 1760,
+        "simulationTick": 30460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 4.4589002081676545,
+    "index": 4,
+    "scale": 5,
+    "elapsed": 6.728116485999635,
+    "fps": 2.2294501040838273,
+    "instant_median": 2.2207433500000002,
+    "projectiles": 48,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 2.2242417,
+        "frame": 1769,
+        "simulationTick": 33260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2260733,
+        "frame": 1770,
+        "simulationTick": 33460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2564592,
+        "frame": 1771,
+        "simulationTick": 33660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.278181,
+        "frame": 1772,
+        "simulationTick": 33860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2152076,
+        "frame": 1773,
+        "simulationTick": 34060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.3048947,
+        "frame": 1774,
+        "simulationTick": 34260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.1972184,
+        "frame": 1775,
+        "simulationTick": 34460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.1668894,
+        "frame": 1776,
+        "simulationTick": 34660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.2104962,
+        "frame": 1777,
+        "simulationTick": 34860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.3109605,
+        "frame": 1778,
+        "simulationTick": 35060,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.217245,
+        "frame": 1779,
+        "simulationTick": 35260,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.262784,
+        "frame": 1780,
+        "simulationTick": 35460,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.1191,
+        "frame": 1781,
+        "simulationTick": 35660,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 2.214712,
+        "frame": 1782,
+        "simulationTick": 35860,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  },
+  {
+    "simulation_rate": 1.202432738562778,
+    "index": 0,
+    "scale": 1,
+    "elapsed": 6.046076230999461,
+    "fps": 60.20433519076357,
+    "instant_median": 60.06006,
+    "projectiles": 45,
+    "plants": 30,
+    "zombies": 5,
+    "samples": [
+      {
+        "instantaneous": 60.06006,
+        "frame": 1845,
+        "simulationTick": 37078,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1854,
+        "simulationTick": 37096,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1863,
+        "simulationTick": 37114,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1875,
+        "simulationTick": 37138,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1887,
+        "simulationTick": 37162,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1899,
+        "simulationTick": 37185,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1911,
+        "simulationTick": 37209,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1920,
+        "simulationTick": 37227,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1929,
+        "simulationTick": 37245,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1940,
+        "simulationTick": 37267,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1949,
+        "simulationTick": 37285,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1958,
+        "simulationTick": 37303,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1967,
+        "simulationTick": 37321,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1979,
+        "simulationTick": 37345,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 1991,
+        "simulationTick": 37369,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2003,
+        "simulationTick": 37393,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2015,
+        "simulationTick": 37417,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2027,
+        "simulationTick": 37441,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2039,
+        "simulationTick": 37465,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2048,
+        "simulationTick": 37483,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2056,
+        "simulationTick": 37499,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2068,
+        "simulationTick": 37523,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2077,
+        "simulationTick": 37541,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2086,
+        "simulationTick": 37559,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2095,
+        "simulationTick": 37577,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2107,
+        "simulationTick": 37601,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2119,
+        "simulationTick": 37625,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2128,
+        "simulationTick": 37643,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2137,
+        "simulationTick": 37661,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2146,
+        "simulationTick": 37679,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2158,
+        "simulationTick": 37703,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2170,
+        "simulationTick": 37727,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2182,
+        "simulationTick": 37751,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      },
+      {
+        "instantaneous": 60.06006,
+        "frame": 2194,
+        "simulationTick": 37775,
+        "board": "9451fbdfc8ce44778e445bd3991ababa"
+      }
+    ]
+  }
+]
