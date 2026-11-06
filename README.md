@@ -28,13 +28,14 @@ Like Plant Library, the mod menu uses an embedded, opaque 512×512 icon. The nat
 From `/home/kevin/modding`:
 
 ```sh
+rtk proxy pvzreplanted/.tools/dotnet/dotnet build pvzreplanted/speed-mod/SpeedMod.csproj -c Release
 rtk proxy pvzreplanted/.tools/dotnet/dotnet build pvzreplanted/fusion-mod/FusionMod.csproj -c Release
 rtk proxy pvzreplanted/.tools/fusion-workflow/bin/python pvzreplanted/speed-mod/tools/install.py
 ```
 
 To update only this mod, a release build of `speed-mod/SpeedMod.csproj` and then `python3 pvzreplanted/debug-mod/tools/install.py --only SpeedMod` is sufficient. This installer also secures DLL and checksums before atomic exchange.
 
-The Fusion build includes SpeedMod. The installer saves both existing DLLs, checks interim file changes and replaces `Mods/SpeedMod.dll` and `Mods/FusionMod.dll`. In the event of an installation error, it restores the previous state. `backups/<Zeitstempel>/installation.json` contains the original and installed checksums.
+Build both projects explicitly: Fusion's optional SpeedMod integration does not build SpeedMod. The installer saves both existing DLLs, checks interim file changes and replaces `Mods/SpeedMod.dll` and `Mods/FusionMod.dll`. In the event of an installation error, it restores the previous state. `backups/<Zeitstempel>/installation.json` contains the original and installed checksums.
 
 To restore both DLLs together from the same backup. If no SpeedMod was previously installed, remove `Mods/SpeedMod.dll` and restore the backed up FusionMod.dll. Keep the game closed during installation and dismantling.
 
