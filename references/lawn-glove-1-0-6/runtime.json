@@ -1,0 +1,109 @@
+{
+  "version": "1.0.6",
+  "debugVersion": "1.3.7",
+  "date": "2026-11-06",
+  "liveCooldownMeasurements": [
+    {
+      "expectedScale": 1,
+      "elapsed": 1.0414138489977631,
+      "before": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 29.733599990606308,
+        "chargeFraction": 0.008880000313123082,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "after": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 28.684649953618646,
+        "chargeFraction": 0.04384500154604509,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "observedScale": 1.0072364968039862
+    },
+    {
+      "expectedScale": 0,
+      "elapsed": 0.6410662590005813,
+      "before": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 28.63469995185733,
+        "chargeFraction": 0.04551000160475571,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "after": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 28.63469995185733,
+        "chargeFraction": 0.04551000160475571,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "observedScale": 0.0
+    },
+    {
+      "expectedScale": 20,
+      "elapsed": 0.2913128219988721,
+      "before": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 27.585749937221408,
+        "chargeFraction": 0.08047500209261971,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "after": {
+        "board": "5007d5163cf64814bce075d1c3bd45ec",
+        "suppressCooldown": false,
+        "available": true,
+        "ready": true,
+        "selectedTool": "Hammer",
+        "remaining": 21.59174985997379,
+        "chargeFraction": 0.2802750046675404,
+        "armed": false,
+        "customToolSelected": true
+      },
+      "observedScale": 20.575819615900144
+    }
+  ],
+  "hold": [
+    {
+      "realTimeHoldAt20x": "1300 ms no switch; 2200 ms exactly one switch",
+      "passed": true
+    }
+  ],
+  "slowLiveLimitation": "The Wayland pointer path could not activate the slowdown button. Native settings did not change the active TimeCycler scale. Settings were restored. Slow scales are covered by the executed-IL offline regression.",
+  "withoutLawnGlove": {
+    "speedVersion": "1.0.6",
+    "mainMenuReady": true,
+    "LawnGloveAssemblyLoaded": false,
+    "FusionAssemblyLoaded": false,
+    "redErrors": []
+  },
+  "restoredDLLs": [
+    "LawnGlove.dll",
+    "FusionMod.dll"
+  ],
+  "installedSpeedSHA256": "e9721bbc0a0dafb8bd4676bd1ad7470419df42b69b3714e33a388a3a8471261e",
+  "gameExited": true,
+  "passed": true
+}

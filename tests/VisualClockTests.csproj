@@ -2,8 +2,9 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <OutputType>Exe</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup><Compile Include="../src/VisualClock.cs" Link="VisualClock.cs" /><Compile Include="../src/SimulationBudget.cs" Link="SimulationBudget.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="VisualClockTests.cs" /><Compile Include="../src/VisualClock.cs" Link="VisualClock.cs" /><Compile Include="../src/SimulationBudget.cs" Link="SimulationBudget.cs" /></ItemGroup>
 </Project>

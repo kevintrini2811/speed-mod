@@ -1,11 +1,13 @@
-# Speed Mod 1.0.5
+# Speed Mod 1.0.6
 
 ## Dependencies
 
 - Game/runtime: PvZ Replanted (Windows/IL2CPP), MelonLoader 0.7.3, and .NET 6.
 - Required mods: `BloomEngine.dll`.
-- Optional integrations: `DebugMod`, `VersusBot` 1.0.0.
+- Optional integrations: `DebugMod`, `VersusBot` 1.0.0, `LawnGlove`.
 - Building: .NET SDK with `net6.0` support and the game/MelonLoader reference assemblies declared in `SpeedMod.csproj`.
+
+Version 1.0.6 applies the selected game speed to Lawn Glove, Hammer and Zombie Glove cooldowns when the optional Glove Mod is installed. Native time pause stops their cooldowns. Controller hold gestures and UI polling retain real time. Without Speed Mod, Glove Mod retains its original cooldown clock.
 
 Version 1.0.5 removes VersusBot's unrelated 1.5× cap outside Bot vs Bot. The optional compatibility patch changes only that cap; VersusBot retains its own UI cleanup and Bot vs Bot speed control. The normal native button can reach every installed speed stage without returning to 1× on the next frame.
 
