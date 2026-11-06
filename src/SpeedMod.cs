@@ -3,9 +3,9 @@ using Il2CppReloaded.Gameplay;
 using Il2CppReloaded.Services;
 using MelonLoader;
 
-[assembly: MelonInfo(typeof(SpeedMod.Mod), "Speed Mod", "1.0.4", "Kevin / Codex")]
+[assembly: MelonInfo(typeof(SpeedMod.Mod), "Speed Mod", "1.0.5", "Kevin / Codex")]
 [assembly: MelonGame("PopCap Games", "PvZ Replanted")]
-[assembly: MelonOptionalDependencies("DebugMod")]
+[assembly: MelonOptionalDependencies("DebugMod", "VersusBot")]
 [assembly: MelonAdditionalDependencies("BloomEngine")]
 [assembly: MelonPriority(-50)]
 

@@ -1,11 +1,15 @@
-# Speed Mod 1.0.4
+# Speed Mod 1.0.5
 
 ## Dependencies
 
 - Game/runtime: PvZ Replanted (Windows/IL2CPP), MelonLoader 0.7.3, and .NET 6.
 - Required mods: `BloomEngine.dll`.
-- Optional integrations: `DebugMod`.
+- Optional integrations: `DebugMod`, `VersusBot` 1.0.0.
 - Building: .NET SDK with `net6.0` support and the game/MelonLoader reference assemblies declared in `SpeedMod.csproj`.
+
+Version 1.0.5 removes VersusBot's unrelated 1.5× cap outside Bot vs Bot. The optional compatibility patch changes only that cap; VersusBot retains its own UI cleanup and Bot vs Bot speed control. The normal native button can reach every installed speed stage without returning to 1× on the next frame.
+
+The bug also reproduces without Speed Mod: native 2× and 2.5× reset to 1×. The [English issue report](references/versusbot-speed-issue.md) includes the minimal reproduction, root cause and runtime evidence.
 
 Version 1.0.4 checks whether the native Unity component is still alive before additional animation accesses. After plant removal, a native animation callback can still be called with an existing IL2CPP wrapper whose Unity object is already destroyed.
 

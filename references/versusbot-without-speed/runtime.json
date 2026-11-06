@@ -1,0 +1,124 @@
+{
+  "disabled": {
+    "SpeedMod.dll": "17b5e09e20b103120e06234e81f4e5ae89612452b546cdad02dd8ed439acba01",
+    "FusionMod.dll": "ed1ce879fa543b4d2753b606a5f1e6b4c7f72cd2e02e0de0bfcd909b7d1d0b7b"
+  },
+  "checks": [
+    {
+      "chosen": {
+        "protocol": 1,
+        "id": "6dd75ab08e69457a9c9f7cbaa5c82f21",
+        "session": "2fcb89b2eaa44febadee28b01dc18676",
+        "ok": true,
+        "result": {
+          "selected": 2,
+          "effective": 2,
+          "cycles": [
+            {
+              "index": 0,
+              "scale": 1
+            },
+            {
+              "index": 1,
+              "scale": 1.5
+            },
+            {
+              "index": 2,
+              "scale": 2
+            },
+            {
+              "index": 3,
+              "scale": 2.5
+            }
+          ]
+        }
+      },
+      "after250ms": {
+        "protocol": 1,
+        "id": "bf366fce733e4e099a6fcf46d05301a2",
+        "session": "2fcb89b2eaa44febadee28b01dc18676",
+        "ok": true,
+        "result": {
+          "selected": 0,
+          "effective": 1,
+          "cycles": [
+            {
+              "index": 0,
+              "scale": 1
+            },
+            {
+              "index": 1,
+              "scale": 1.5
+            },
+            {
+              "index": 2,
+              "scale": 2
+            },
+            {
+              "index": 3,
+              "scale": 2.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "chosen": {
+        "protocol": 1,
+        "id": "e97f502c39164833bdb46f959429ce09",
+        "session": "2fcb89b2eaa44febadee28b01dc18676",
+        "ok": true,
+        "result": {
+          "selected": 3,
+          "effective": 2.5,
+          "cycles": [
+            {
+              "index": 0,
+              "scale": 1
+            },
+            {
+              "index": 1,
+              "scale": 1.5
+            },
+            {
+              "index": 2,
+              "scale": 2
+            },
+            {
+              "index": 3,
+              "scale": 2.5
+            }
+          ]
+        }
+      },
+      "after250ms": {
+        "protocol": 1,
+        "id": "b2c5cff8eeda4bc58b7636bde821d8b6",
+        "session": "2fcb89b2eaa44febadee28b01dc18676",
+        "ok": true,
+        "result": {
+          "selected": 0,
+          "effective": 1,
+          "cycles": [
+            {
+              "index": 0,
+              "scale": 1
+            },
+            {
+              "index": 1,
+              "scale": 1.5
+            },
+            {
+              "index": 2,
+              "scale": 2
+            },
+            {
+              "index": 3,
+              "scale": 2.5
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
