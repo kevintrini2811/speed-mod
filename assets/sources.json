@@ -1,0 +1,31 @@
+{
+  "reference": "../../plant-library/tools/export_menu_assets.py",
+  "inputs": {
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/backgroundatlases_assets_all_19e402bc532d2cf4f6d062dcf0b108ec.bundle": "26f735ae00c9cdf3e99bccfd29395741d5283c40e4b139f0350a007b5e510328",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/defaultlocalgroup_assets_ui/sprites_5b5218033ecdc00622a31e94d7a6a379.bundle": "4515929ed5d3ba49c790a443c187966535bbd0ebb00c5d4fedadc0cd1d377a6a",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasfrontend_assets_all.bundle": "a5a8a8760234da4e070db45c9de7b1203b3d29203c6e452b60efff9c7f25a393",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasgameplay_assets_all.bundle": "c87b65761e5a3a13e860ccccfb6f9f4d2be296742eaa642cabafa82f280dd5ec"
+  },
+  "sprites": {
+    "6300021484793803998": "Area5_Roof",
+    "-6031288369445383670": "SPR_MainHud_Acceleration_02",
+    "-7241453303276410771": "SPR_BasicButtonSmallBackground"
+  },
+  "roof_crop": [
+    1447,
+    584,
+    3618,
+    1336
+  ],
+  "indicator_mirrored": true,
+  "icon_size": [
+    512,
+    512
+  ],
+  "game_started": false,
+  "assets": {
+    "roof.png": "fdce3eece18293b2c87db2a7745094d6cb14caf3dc13c349a797f0c65b64d983",
+    "slowdown.png": "9a9d8a7df23d1c47a7b84aeb512d9643329dbc01df5e55faccd9a35738c48966",
+    "menu-icon.png": "0383c3f000909c1bb5ccd4ce08267b1c65934a266279d806555863d0fdccba2e"
+  }
+}
